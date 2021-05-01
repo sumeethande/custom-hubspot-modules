@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap');
+* {box-sizing: border-box; font-family: 'Comic Neue', cursive;}
+.main-container {display: grid; grid-template-areas: "box box"; grid-column-gap: 10%; grid-row-gap: 5%; width: 60%; margin: 0 auto;}
+.member-box { grid-area: "box"; border-top: 1px solid gray; border-left: 1px solid gray; box-shadow: 1px 1px 1px 1px gray; border-radius: 40px; display: flex; flex-direction: column; padding: 20px; align-items: center;}
+.image-box { height: 200px; width: 200px; border-radius: 40px;}
+.image-box > img { object-fit: cover; width: 100%; height: 100%; border-radius: 40px;}
+.name-box { font-size: 32px; padding: 10px;}
+.position { padding-bottom: 15px; }
+.social-icons { display: grid; grid-auto-flow: column; grid-column-gap: 15px; justify-content: center; margin-bottom: 10px;}
+.icon-div { height: 25px; width: 25px;}
+.bio-box { font-size: 18px; width: 90%; }
+
+
+.icon-div:hover {transform: scale(1.2, 1.2);}
+
+
+/************************************** MEDIA QUERIES ********************************************************/
+/* MOBILE PHONES */
+@media (max-width:426px) {
+  .main-container {grid-template-areas: "box"; width: 100%; grid-column-gap: 5%; grid-row-gap: 0;}
+  .member-box {transform: scale(0.9, 0.9);}
+}
+
+/* TABLETS */
+@media (min-width: 427px) and (max-width: 769px) {
+  .main-container {grid-column-gap: 5%; width:100%; transform: scale(0.9,0.9);}
+}
