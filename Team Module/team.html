@@ -31,3 +31,42 @@
   {% endfor %}
 </div>  
 {% endif %}
+<!--------------------------------------------------------------------------------------------------------------------->
+
+{% if module.variant == 'var-02' %}
+  <div class="var-02-main-container">
+    {% for member in module.member_box %}
+      <div class="var-02-member-box">
+        <div class="left-side">
+          <div class="var-02-image-box">
+            <img src="{{ member.member_photo.src }}" alt="{{ member.member_photo.alt }}">
+          </div>
+          <div class="social-icons top-space">
+            {% for item in member.social_icons %}
+              <div class="icon-div">
+                  <a href="{{ item.icon_link }}">{% icon
+                        name="{{ item.social_icon.name }}"
+                        style="{{ item.social_icon.type }}"
+                        unicode="{{ item.social_icon.unicode }}"
+                        icon_set="{{ item.social_icon.icon_set }}"
+                        %}
+                 </a>  
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="right-side">
+          <div class="var-02-name-box">
+            {% inline_text field="member_name" value="{{ member.member_name }}" %}
+          </div>
+          <div class="var-02-position">
+            {% inline_text field="member_position" value="{{ member.member_position }}" %}
+          </div>
+          <div class="var-02-bio-box">
+            {% inline_text field="member_info" value="{{ member.member_info }}" %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
